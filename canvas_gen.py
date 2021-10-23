@@ -103,21 +103,19 @@ def writeText(df_list):
     for i in df_list:
         #print(i[1])
         contactible = (i[8].find('do not contact') == -1) #are they not a do not contact? #yes
-        contact_info = ((i[3] != '') or (i[4] != '') or (i[5] != '')) #DO WE HAVE ANY CONTACT INFO? #yes
-        some_interest_level = ((i[9].find('MEDIUM') != -1) or (i[9].find('HIGH')) != -1) #Is there interest? #yes
-        contacted = (i[7].find('YES') != -1) #Have we contacted them previously? #yes
+        #contact_info = ((i[3] != '') or (i[4] != '') or (i[5] != '')) #DO WE HAVE ANY CONTACT INFO? #yes
+        #some_interest_level = ((i[9].find('MEDIUM') != -1) or (i[9].find('HIGH')) != -1) #Is there interest? #yes
+        #contacted = (i[7].find('YES') != -1) #Have we contacted them previously? #yes
         #print(contactible,contact_info,some_interest_level,contacted)
         if i[0] != bld_count and i[1] != '':
             f.write("\nBuilding Number: " + i[0] + '\n')
             f.write("_________________________" + '\n')
             bld_count = i[0]
-        if i[1] != '':  
-            #print((contactible and not(contacted)) or (not(contact_info) and some_interest_level))
-            if((contactible and not(contacted)) or (not(contact_info) and some_interest_level)):
-                f.write("_________________________" + '\n\n')
-                f.write("Unit " + i[1] + "\n" + "Name: " + i[2] + "Phone: " + i[3] + "Facebook: " + i[5] + "Last visit: " + i[6] + '\n')
-                f.write("Email: " + i[4] + '\n')
-                f.write("\nNotes: " + i[8] + ' ' + i[15] + '\n\n\n')
+        if (i[1] != '' and contactible):  
+            f.write("_________________________" + '\n\n')
+            f.write("Unit " + i[1] + "\n" + "Name: " + i[2] + "Phone: " + i[3] + "Facebook: " + i[5] + "Last visit: " + i[6] + '\n')
+            f.write("Email: " + i[4] + '\n')
+            f.write("\nNotes: " + '\n\n')
            
             
     #f.write("Now the file has more content!")
