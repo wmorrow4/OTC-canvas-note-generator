@@ -115,7 +115,7 @@ def writeText(df_list):
             f.write("_________________________" + '\n\n')
             f.write("Unit " + i[1] + "\n" + "Name: " + i[2] + "Phone: " + i[3] + "Facebook: " + i[5] + "Last visit: " + i[6] + '\n')
             f.write("Email: " + i[4] + '\n')
-            f.write("\nNotes: " + '\n\n')
+            f.write("\nNotes: " + i[8] + '\nFlyer:\n')
            
             
     #f.write("Now the file has more content!")
