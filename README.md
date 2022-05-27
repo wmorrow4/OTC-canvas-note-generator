@@ -14,6 +14,6 @@ Using the canvassing note generator (I'm using ubuntu 20.04, but should work on 
 
 -Navigate to the directory of canvas_gen.py in terminal
 
--python canvas_gen.py '<xlsx filename>'
+-python canvas_gen.py <xlsx filename>
   
 The program will spit out a tenant_info.txt that contains the new note info.
